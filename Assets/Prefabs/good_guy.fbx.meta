@@ -1,0 +1,417 @@
+fileFormatVersion: 2
+guid: 0d480262326b7d941ba0669d3152a455
+timeCreated: 1513194382
+licenseType: Free
+ModelImporter:
+  serializedVersion: 22
+  fileIDToRecycleName:
+    100000: Armature
+    100002: armor
+    100004: boots
+    100006: Chest
+    100008: dude
+    100010: Foot.L
+    100012: Foot.R
+    100014: //RootNode
+    100016: hat
+    100018: Head
+    100020: Head_end
+    100022: Hips
+    100024: Leg IK.L
+    100026: Leg IK.L_end
+    100028: Leg IK.R
+    100030: Leg IK.R_end
+    100032: Lower Arm.L
+    100034: Lower Arm.L_end
+    100036: Lower Arm.R
+    100038: Lower Arm.R_end
+    100040: Lower Leg.L
+    100042: Lower Leg.R
+    100044: mask
+    100046: Neck
+    100048: Pole Target.L
+    100050: Pole Target.L_end
+    100052: Pole Target.R
+    100054: Pole Target.R_end
+    100056: Shoulder.L
+    100058: Shoulder.R
+    100060: Spine
+    100062: Sword1
+    100064: Sword1_MeshPart0
+    100066: Sword1_MeshPart1
+    100068: Sword1_MeshPart2
+    100070: Sword2
+    100072: Sword2_MeshPart0
+    100074: Sword2_MeshPart1
+    100076: Sword2_MeshPart2
+    100078: Toes.L
+    100080: Toes.L_end
+    100082: Toes.R
+    100084: Toes.R_end
+    100086: Upper Arm.L
+    100088: Upper Arm.R
+    100090: Upper Leg.L
+    100092: Upper Leg.R
+    400000: Armature
+    400002: armor
+    400004: boots
+    400006: Chest
+    400008: dude
+    400010: Foot.L
+    400012: Foot.R
+    400014: //RootNode
+    400016: hat
+    400018: Head
+    400020: Head_end
+    400022: Hips
+    400024: Leg IK.L
+    400026: Leg IK.L_end
+    400028: Leg IK.R
+    400030: Leg IK.R_end
+    400032: Lower Arm.L
+    400034: Lower Arm.L_end
+    400036: Lower Arm.R
+    400038: Lower Arm.R_end
+    400040: Lower Leg.L
+    400042: Lower Leg.R
+    400044: mask
+    400046: Neck
+    400048: Pole Target.L
+    400050: Pole Target.L_end
+    400052: Pole Target.R
+    400054: Pole Target.R_end
+    400056: Shoulder.L
+    400058: Shoulder.R
+    400060: Spine
+    400062: Sword1
+    400064: Sword1_MeshPart0
+    400066: Sword1_MeshPart1
+    400068: Sword1_MeshPart2
+    400070: Sword2
+    400072: Sword2_MeshPart0
+    400074: Sword2_MeshPart1
+    400076: Sword2_MeshPart2
+    400078: Toes.L
+    400080: Toes.L_end
+    400082: Toes.R
+    400084: Toes.R_end
+    400086: Upper Arm.L
+    400088: Upper Arm.R
+    400090: Upper Leg.L
+    400092: Upper Leg.R
+    2300000: Sword1_MeshPart0
+    2300002: Sword1_MeshPart1
+    2300004: Sword1_MeshPart2
+    2300006: Sword2_MeshPart0
+    2300008: Sword2_MeshPart1
+    2300010: Sword2_MeshPart2
+    3300000: Sword1_MeshPart0
+    3300002: Sword1_MeshPart1
+    3300004: Sword1_MeshPart2
+    3300006: Sword2_MeshPart0
+    3300008: Sword2_MeshPart1
+    3300010: Sword2_MeshPart2
+    4300000: Sword1_MeshPart0
+    4300002: Sword1_MeshPart1
+    4300004: Sword1_MeshPart2
+    4300006: Sword2_MeshPart0
+    4300008: Sword2_MeshPart1
+    4300010: Sword2_MeshPart2
+    4300012: dude
+    4300014: boots
+    4300016: armor
+    4300018: hat
+    4300020: mask
+    7400000: Armature|Atack
+    7400002: Armature|Atack2
+    7400004: Armature|Chill
+    7400006: Armature|Jump
+    7400008: Armature|Run
+    7400010: Armature|SlideLeft
+    7400012: Armature|SlideRight
+    9500000: //RootNode
+    11100000: //RootNode
+    13700000: armor
+    13700002: boots
+    13700004: dude
+    13700006: hat
+    13700008: mask
+  externalObjects:
+  - first:
+      type: UnityEngine:Material
+      assembly: UnityEngine.CoreModule
+      name: No Name
+    second: {fileID: 2100000, guid: 7f382bcdbb773b845bc510856e78b9b8, type: 2}
+  materials:
+    importMaterials: 1
+    materialName: 0
+    materialSearch: 1
+    materialLocation: 0
+  animations:
+    legacyGenerateAnimations: 4
+    bakeSimulation: 0
+    resampleCurves: 1
+    optimizeGameObjects: 0
+    motionNodeName: 
+    rigImportErrors: 
+    rigImportWarnings: 
+    animationImportErrors: 
+    animationImportWarnings: 
+    animationRetargetingWarnings: 
+    animationDoRetargetingWarnings: 0
+    importAnimatedCustomProperties: 0
+    animationCompression: 1
+    animationRotationError: 0.5
+    animationPositionError: 0.5
+    animationScaleError: 0.5
+    animationWrapMode: 0
+    extraExposedTransformPaths: []
+    extraUserProperties: []
+    clipAnimations:
+    - serializedVersion: 16
+      name: Armature|Atack
+      takeName: Armature|Atack
+      firstFrame: 0
+      lastFrame: 20
+      wrapMode: 1
+      orientationOffsetY: 0
+      level: 0
+      cycleOffset: 0
+      loop: 0
+      hasAdditiveReferencePose: 0
+      loopTime: 0
+      loopBlend: 0
+      loopBlendOrientation: 0
+      loopBlendPositionY: 0
+      loopBlendPositionXZ: 0
+      keepOriginalOrientation: 0
+      keepOriginalPositionY: 1
+      keepOriginalPositionXZ: 0
+      heightFromFeet: 0
+      mirror: 0
+      bodyMask: 01000000010000000100000001000000010000000100000001000000010000000100000001000000010000000100000001000000
+      curves: []
+      events: []
+      transformMask: []
+      maskType: 3
+      maskSource: {instanceID: 0}
+      additiveReferencePoseFrame: 0
+    - serializedVersion: 16
+      name: Armature|Atack2
+      takeName: Armature|Atack2
+      firstFrame: 0
+      lastFrame: 12
+      wrapMode: 1
+      orientationOffsetY: 0
+      level: 0
+      cycleOffset: 0
+      loop: 0
+      hasAdditiveReferencePose: 0
+      loopTime: 0
+      loopBlend: 0
+      loopBlendOrientation: 0
+      loopBlendPositionY: 0
+      loopBlendPositionXZ: 0
+      keepOriginalOrientation: 0
+      keepOriginalPositionY: 1
+      keepOriginalPositionXZ: 0
+      heightFromFeet: 0
+      mirror: 0
+      bodyMask: 01000000010000000100000001000000010000000100000001000000010000000100000001000000010000000100000001000000
+      curves: []
+      events: []
+      transformMask: []
+      maskType: 3
+      maskSource: {instanceID: 0}
+      additiveReferencePoseFrame: 0
+    - serializedVersion: 16
+      name: Armature|Chill
+      takeName: Armature|Chill
+      firstFrame: 0
+      lastFrame: 100
+      wrapMode: 1
+      orientationOffsetY: 0
+      level: 0
+      cycleOffset: 0
+      loop: 0
+      hasAdditiveReferencePose: 0
+      loopTime: 0
+      loopBlend: 0
+      loopBlendOrientation: 0
+      loopBlendPositionY: 0
+      loopBlendPositionXZ: 0
+      keepOriginalOrientation: 0
+      keepOriginalPositionY: 1
+      keepOriginalPositionXZ: 0
+      heightFromFeet: 0
+      mirror: 0
+      bodyMask: 01000000010000000100000001000000010000000100000001000000010000000100000001000000010000000100000001000000
+      curves: []
+      events: []
+      transformMask: []
+      maskType: 3
+      maskSource: {instanceID: 0}
+      additiveReferencePoseFrame: 0
+    - serializedVersion: 16
+      name: Armature|Jump
+      takeName: Armature|Jump
+      firstFrame: 15
+      lastFrame: 19
+      wrapMode: 1
+      orientationOffsetY: 0
+      level: 0
+      cycleOffset: 0
+      loop: 0
+      hasAdditiveReferencePose: 0
+      loopTime: 0
+      loopBlend: 0
+      loopBlendOrientation: 0
+      loopBlendPositionY: 0
+      loopBlendPositionXZ: 0
+      keepOriginalOrientation: 0
+      keepOriginalPositionY: 1
+      keepOriginalPositionXZ: 0
+      heightFromFeet: 0
+      mirror: 0
+      bodyMask: 01000000010000000100000001000000010000000100000001000000010000000100000001000000010000000100000001000000
+      curves: []
+      events: []
+      transformMask: []
+      maskType: 3
+      maskSource: {instanceID: 0}
+      additiveReferencePoseFrame: 0
+    - serializedVersion: 16
+      name: Armature|Run
+      takeName: Armature|Run
+      firstFrame: 0
+      lastFrame: 16
+      wrapMode: 1
+      orientationOffsetY: 0
+      level: 0
+      cycleOffset: 0
+      loop: 0
+      hasAdditiveReferencePose: 0
+      loopTime: 0
+      loopBlend: 0
+      loopBlendOrientation: 0
+      loopBlendPositionY: 0
+      loopBlendPositionXZ: 0
+      keepOriginalOrientation: 0
+      keepOriginalPositionY: 1
+      keepOriginalPositionXZ: 0
+      heightFromFeet: 0
+      mirror: 0
+      bodyMask: 01000000010000000100000001000000010000000100000001000000010000000100000001000000010000000100000001000000
+      curves: []
+      events: []
+      transformMask: []
+      maskType: 3
+      maskSource: {instanceID: 0}
+      additiveReferencePoseFrame: 0
+    - serializedVersion: 16
+      name: Armature|SlideLeft
+      takeName: Armature|SlideLeft
+      firstFrame: 0
+      lastFrame: 1
+      wrapMode: 1
+      orientationOffsetY: 0
+      level: 0
+      cycleOffset: 0
+      loop: 0
+      hasAdditiveReferencePose: 0
+      loopTime: 0
+      loopBlend: 0
+      loopBlendOrientation: 0
+      loopBlendPositionY: 0
+      loopBlendPositionXZ: 0
+      keepOriginalOrientation: 0
+      keepOriginalPositionY: 1
+      keepOriginalPositionXZ: 0
+      heightFromFeet: 0
+      mirror: 0
+      bodyMask: 01000000010000000100000001000000010000000100000001000000010000000100000001000000010000000100000001000000
+      curves: []
+      events: []
+      transformMask: []
+      maskType: 3
+      maskSource: {instanceID: 0}
+      additiveReferencePoseFrame: 0
+    - serializedVersion: 16
+      name: Armature|SlideRight
+      takeName: Armature|SlideRight
+      firstFrame: 0
+      lastFrame: 1
+      wrapMode: 1
+      orientationOffsetY: 0
+      level: 0
+      cycleOffset: 0
+      loop: 0
+      hasAdditiveReferencePose: 0
+      loopTime: 0
+      loopBlend: 0
+      loopBlendOrientation: 0
+      loopBlendPositionY: 0
+      loopBlendPositionXZ: 0
+      keepOriginalOrientation: 0
+      keepOriginalPositionY: 1
+      keepOriginalPositionXZ: 0
+      heightFromFeet: 0
+      mirror: 0
+      bodyMask: 01000000010000000100000001000000010000000100000001000000010000000100000001000000010000000100000001000000
+      curves: []
+      events: []
+      transformMask: []
+      maskType: 3
+      maskSource: {instanceID: 0}
+      additiveReferencePoseFrame: 0
+    isReadable: 1
+  meshes:
+    lODScreenPercentages: []
+    globalScale: 1
+    meshCompression: 0
+    addColliders: 0
+    importVisibility: 1
+    importBlendShapes: 1
+    importCameras: 1
+    importLights: 1
+    swapUVChannels: 0
+    generateSecondaryUV: 0
+    useFileUnits: 1
+    optimizeMeshForGPU: 1
+    keepQuads: 0
+    weldVertices: 1
+    secondaryUVAngleDistortion: 8
+    secondaryUVAreaDistortion: 15.000001
+    secondaryUVHardAngle: 88
+    secondaryUVPackMargin: 4
+    useFileScale: 1
+  tangentSpace:
+    normalSmoothAngle: 60
+    normalImportMode: 0
+    tangentImportMode: 3
+    normalCalculationMode: 4
+  importAnimation: 1
+  copyAvatar: 0
+  humanDescription:
+    serializedVersion: 2
+    human: []
+    skeleton: []
+    armTwist: 0.5
+    foreArmTwist: 0.5
+    upperLegTwist: 0.5
+    legTwist: 0.5
+    armStretch: 0.05
+    legStretch: 0.05
+    feetSpacing: 0
+    rootMotionBoneName: 
+    rootMotionBoneRotation: {x: 0, y: 0, z: 0, w: 1}
+    hasTranslationDoF: 0
+    hasExtraRoot: 1
+    skeletonHasParents: 1
+  lastHumanDescriptionAvatarSource: {instanceID: 0}
+  animationType: 1
+  humanoidOversampling: 1
+  additionalBone: 0
+  userData: 
+  assetBundleName: 
+  assetBundleVariant: 
