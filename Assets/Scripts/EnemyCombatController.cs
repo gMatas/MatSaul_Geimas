@@ -4,11 +4,15 @@ using UnityEngine;
 
 public class EnemyCombatController : MonoBehaviour
 {
+    public EnemyAnimation MyAnimator;
     public Collider2D MeleeWeapon;
     public float MaxHealth;
     public float Health;
 
     public bool isDead = false;
+    private bool _takeDamage = false;
+    private ProjectileController _playerWeaponController;
+
 
 
     // Use this for initialization
@@ -21,6 +25,12 @@ public class EnemyCombatController : MonoBehaviour
 	// Update is called once per frame
 	void Update ()
     {
+        if (_takeDamage)
+        {
+            TakeDamage(_playerWeaponController.Damage, _playerWeaponController.CriticalHitRatio);
+            _playerWeaponController = null;
+            _takeDamage = false;
+        }
 		if (isDead)
         {
             Death();
@@ -37,18 +47,32 @@ public class EnemyCombatController : MonoBehaviour
         MeleeWeapon.enabled = false;
     }
 
+    bool animationsWasRunned = false;
+
     private void Death()
     {
         Debug.Log("Enemy is dead!");
         Destroy(GetComponent<EnemyAI>());
+        //if(!animationsWasRunned)
+        //{
+        //    animationsWasRunned = true;
+        //    MyAnimator.PlayDeath();
+        //}
+        //if (!MyAnimator.Anim.isPlaying && animationsWasRunned)
+        //{ 
+            
+        //}
         Destroy(gameObject);
     }
 
     private void TakeDamage(float damage, float criticalHitRatio)
     {
-        var chance = (float)(Random.Range(0.01f, 1f));  // returns value between [0.01 ... 1] inclusive
-        
-        if (criticalHitRatio >= chance)
+        var chance = (Random.Range(1, 101));  // returns value between [0.01 ... 1] inclusive
+        Debug.Log("Chance: " + chance.ToString());
+        Debug.Log("CritHit: " + (criticalHitRatio*100).ToString());
+        Debug.Log("damage done: " + damage.ToString());
+
+        if (criticalHitRatio * 100 > chance)
         {
             Health = 0;
         }
@@ -62,12 +86,13 @@ public class EnemyCombatController : MonoBehaviour
         }
     }
 
+
     private void OnTriggerEnter2D(Collider2D collision)
     {
         if (collision.CompareTag("Player Mobile Weapon"))
         {
-            var playerWeaponController = collision.GetComponent<ProjectileController>();
-            TakeDamage(playerWeaponController.Damage, playerWeaponController.CriticalHitRatio);
+            _playerWeaponController = collision.GetComponent<ProjectileController>();
+            _takeDamage = true;
         }
     }
 }

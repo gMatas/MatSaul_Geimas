@@ -18,14 +18,20 @@ public class EnemyAI : MonoBehaviour
     private Rigidbody2D _enemyBody;
     private bool _isFacingRight = true;
 
+    public Animation Anim;
+
     private EnemyCombatController _combatController;
     private PatrolRouteService _patrolRouteService;
     private bool _returnToPatrolArea = false;
-    private bool _isEnemyInPatrolArea;
+    private bool _isEnemyInPatrolArea = false;
     private bool _isTargetInPatrolArea;
     private bool _isAttacking = false;
     private bool _isEngaging = false;
     private float _distanceToTarget;
+
+    private bool _enemyHasEnteredPatrolArea;
+    private bool _enemyHasExitedPatrolArea;
+
 
     // Use this for initialization
     void Start ()
@@ -33,12 +39,23 @@ public class EnemyAI : MonoBehaviour
         _enemyBody = GetComponent<Rigidbody2D>();
         _patrolRouteService = PatrolArea.GetComponent<PatrolRouteService>();
         _combatController = GetComponent<EnemyCombatController>();
-	}
+        Anim = GetComponentInChildren<Animation>();
+    }
 	
 	// Update is called once per frame
 	void Update ()
     {
         _isTargetInPatrolArea = _patrolRouteService.IsPlayerInArea();
+        if (_enemyHasEnteredPatrolArea)
+        {
+            _isEnemyInPatrolArea = true;
+        }
+        else if (_enemyHasExitedPatrolArea)
+        {
+            _isEnemyInPatrolArea = false;
+        }
+        _enemyHasEnteredPatrolArea = false;
+        _enemyHasExitedPatrolArea = false;
 
         var attackAnimationRunning = false;
         if (_isAttacking)
@@ -50,14 +67,17 @@ public class EnemyAI : MonoBehaviour
         {
             _isAttacking = false;
             _combatController.DeactivateWeapon();
-            Patrol();
+            Patrol(_isEnemyInPatrolArea);
         }
+        //_isEnemyInPatrolArea = false;
     }
 
     // Attack animation and sequence
     void Attack()
     {
         _combatController.ActivateWeapon();
+         Anim.Play("Armature|Atack");
+        //asdasddas
     }
 
     void Walk()
@@ -82,9 +102,9 @@ public class EnemyAI : MonoBehaviour
         _isFacingRight = !_isFacingRight;
     }
 
-    void Patrol()
+    void Patrol(bool isEnemyInPatrolArea)
     {
-        if (_isEnemyInPatrolArea)
+        if (isEnemyInPatrolArea)
         {
             _distanceToTarget = Target.position.x - transform.position.x; // if + to right | if - to left
             var absoluteDistanceToTarget = Mathf.Abs(_distanceToTarget);
@@ -137,11 +157,13 @@ public class EnemyAI : MonoBehaviour
         }
     }
 
+
+
     private void OnTriggerEnter2D(Collider2D collision)
     {
         if (collision.Equals(PatrolArea))
         {
-            _isEnemyInPatrolArea = true;
+            _enemyHasEnteredPatrolArea = true;
         }
     }
 
@@ -149,9 +171,17 @@ public class EnemyAI : MonoBehaviour
     {
         if (collision.Equals(PatrolArea))
         {
-            _isEnemyInPatrolArea = false;
+            _enemyHasExitedPatrolArea = true;
         }
     }
+
+    //private void OnTriggerStay2D(Collider2D collision)
+    //{
+    //    if (collision.Equals(PatrolArea))
+    //    {
+    //        _isEnemyInPatrolArea = true;
+    //    }
+    //}
 
 
 }

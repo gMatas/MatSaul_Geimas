@@ -29,7 +29,7 @@ public class ButtonClickPlay : MonoBehaviour
     void TaskOnClickExit()
     {
         Debug.Log("You have clicked the button!");
-        UnityEditor.EditorApplication.isPlaying = false;
+        //UnityEditor.EditorApplication.isPlaying = false;
         Application.Quit();
     }
 

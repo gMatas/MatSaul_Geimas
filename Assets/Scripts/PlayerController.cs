@@ -9,6 +9,8 @@ public class PlayerController : MonoBehaviour
 {
     public Text countText;
 
+    public TestAnimation animatorController;
+
     public bool IsModel3D = true;
 	public float MoveSpeed;
 	public float JumpSpeed;
@@ -56,11 +58,11 @@ public class PlayerController : MonoBehaviour
 
 	private void FixedUpdate()
 	{
-		MoveWithKeyboard();		// DEBUG: moving with dirrection keys
-		JumpWithKeyBoard();		// DEBUG: Jumping with key 
-//		 SynchronizeMovementControlEvents();
-		
-		_isWallContact = true;
+		//MoveWithKeyboard();		// DEBUG: moving with dirrection keys
+		//JumpWithKeyBoard();     // DEBUG: Jumping with key 
+        SynchronizeMovementControlEvents();
+
+        _isWallContact = true;
 		foreach (var wallcheck in _wallChecks) 
 			_isWallContact &= Physics2D.OverlapPoint(wallcheck.position, WhatIsWall);
 		_isGrounded = Physics2D.OverlapPoint(GroundCheck.position, WhatIsGround);
@@ -175,7 +177,6 @@ public class PlayerController : MonoBehaviour
 	{
 		return _isFacingRight;
 	}
-
 
 	public void OnPressingJumpButton()
 	{

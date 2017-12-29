@@ -1,24 +1,33 @@
 ﻿using UnityEngine;
 
 
-public class TestAnimation : MonoBehaviour 
+public class EnemyAnimation : MonoBehaviour
 {
     public Animation Anim;
-    private  bool Grip;
+    private bool Grip;
     private Rigidbody2D _playerBody;
-    
-    
+
+
     // Use this for initialization
     void Start()
     {
-        //_playerBody = GetComponentInParent<Rigidbody2D>();
-        Anim = GetComponentInChildren<Animation>();
+        _playerBody = GetComponentInParent<Rigidbody2D>();
+        Anim = GetComponent<Animation>();
         Anim.Play("Armature|Chill");
     }
-	
-    Animation GetAnim()
+
+    public Animation GetAnim()
     {
         return Anim;
+    }
+
+    public void PlayDeath()
+    {
+        Anim.Play("Armature|Death.001");
+    }
+    void PlayWalk()
+    {
+        Anim.Play("Armature|Action");
     }
 
     void PlayJump()
@@ -41,7 +50,7 @@ public class TestAnimation : MonoBehaviour
     }
 
     // Update is called once per frame
-    void Update ()
+    void Update()
     {
 
         Grip = PlayerController._isWallGrip;
@@ -59,7 +68,7 @@ public class TestAnimation : MonoBehaviour
         }
 
         else if (Input.GetKey(KeyCode.LeftArrow) || Input.GetKey(KeyCode.RightArrow))
-        {        
+        {
             Anim.Play("Armature|Run");
         }
 
@@ -100,5 +109,5 @@ public class TestAnimation : MonoBehaviour
             Anim.Play("Armature|Chill");
         }
 
-    }   
+    }
 }

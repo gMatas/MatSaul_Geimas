@@ -23,14 +23,23 @@ public class ProjectileController : MonoBehaviour
 	{
         transform.position = PointOfOrigin.position;
         _projectileBody = GetComponent<Rigidbody2D>();
-		_velocity = FireToRight ? Speed : -Speed;
+        if (FireToRight)
+        {
+            _velocity = Speed;
+        }
+        else
+        {
+            _velocity = -Speed;
+            var rotation = transform.rotation;
+            rotation.z *= -1;
+            transform.rotation = rotation;
+        }
 	}
 	
 	// Update is called once per frame
 	private void Update ()
 	{
         var distanceFromOrigin = Mathf.Abs(transform.position.x - PointOfOrigin.position.x);
-        Debug.Log(distanceFromOrigin);
         if (distanceFromOrigin > MaxDistanceFromOrigin)
         {
             Destroy(gameObject);

@@ -1,6 +1,6 @@
 ﻿using System.Collections;
 using System.Collections.Generic;
-using UnityEditor;
+
 using UnityEngine;
 
 public class PlayerCombatController : MonoBehaviour
@@ -8,6 +8,7 @@ public class PlayerCombatController : MonoBehaviour
 	public Transform FiringPoint;
 	public LayerMask WhatToHit;
 	public Object ThrowingKnifePrefab;
+    public float ThrowingKnifeCooldown;
 	public float ThrowingKnifeSpeed;
 	public float ThrowingKnifeDamage;
     public float ThrowingKnifeCriticalHitRatio;
@@ -19,10 +20,12 @@ public class PlayerCombatController : MonoBehaviour
 	private GameObject _projectilePrefab;
 	private ProjectileController _projectileController;
 	private CircleCollider2D _projectileCollider;
-	
-	
-	// Use this for initialization
-	private void Start ()
+    private bool _doFire;
+    private float _throwingKnifeTimestamp = 0;
+
+
+    // Use this for initialization
+    private void Start ()
 	{
 		_playerController = GetComponent<PlayerController>();
 		
@@ -40,18 +43,24 @@ public class PlayerCombatController : MonoBehaviour
         }
 
 		// Fire projectile
-		if (Input.GetKeyDown(KeyCode.F))
+		if (Input.GetKeyDown(KeyCode.F) || _doFire)
 		{
-			_projectileController.FireToRight = _playerController.PlayerIsFacingRight();
-			_projectileController.WhatToHit = WhatToHit;
-			_projectileController.Speed = ThrowingKnifeSpeed;
-			_projectileController.Damage = ThrowingKnifeDamage;
-            _projectileController.CriticalHitRatio = ThrowingKnifeCriticalHitRatio;
-            _projectileController.PointOfOrigin = FiringPoint;
-			
-			_projectileCollider.radius = ThrowingKnifeHitRadius;
-			Instantiate(_projectilePrefab);
-			FiringPoint.DetachChildren();
+            if (_throwingKnifeTimestamp < Time.time)
+            {
+                _projectileController.FireToRight = _playerController.PlayerIsFacingRight();
+                _projectileController.WhatToHit = WhatToHit;
+                _projectileController.Speed = ThrowingKnifeSpeed;
+                _projectileController.Damage = ThrowingKnifeDamage;
+                _projectileController.CriticalHitRatio = ThrowingKnifeCriticalHitRatio;
+                _projectileController.PointOfOrigin = FiringPoint;
+
+                _projectileCollider.radius = ThrowingKnifeHitRadius;
+                Instantiate(_projectilePrefab);
+                FiringPoint.DetachChildren();
+
+                _throwingKnifeTimestamp = Time.time + ThrowingKnifeCooldown;
+                _doFire = false;
+            }
 		}
 	}
 
@@ -70,5 +79,10 @@ public class PlayerCombatController : MonoBehaviour
         {
             isDead = true;
         }
+    }
+
+    public void OnPressingFireButton()
+    {
+        _doFire = true;
     }
 }

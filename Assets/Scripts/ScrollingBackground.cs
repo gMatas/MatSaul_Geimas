@@ -4,7 +4,6 @@ using UnityEngine;
 
 public class ScrollingBackground : MonoBehaviour
 {
-
     public bool scrolling, paralax;
 
     public float backgroundSize;
@@ -33,21 +32,13 @@ public class ScrollingBackground : MonoBehaviour
 
     private void Update()
     {
-        /* if(Input.GetKeyDown(KeyCode.LeftArrow))
-         {
-             ScrollLeft();
-         }
-
-         if (Input.GetKeyDown(KeyCode.RightArrow))
-         {
-             ScrollRight();
-         }
-         */
         if (paralax)
 
         {
             float deltaX = cameraTransform.position.x - lastCameraX;
-            transform.position += Vector3.right * (deltaX * paralaxSpeed);
+            var position = transform.position;
+            position.x = deltaX * paralaxSpeed;
+            transform.position = position;
         }
 
         lastCameraX = cameraTransform.position.x;
@@ -68,8 +59,10 @@ public class ScrollingBackground : MonoBehaviour
 
     private void ScrollLeft()
     {
-        //int lastRight = rightIndex;
-        layers[rightIndex].position = Vector2.right * (layers[leftIndex].position.x - backgroundSize);
+        var layerPosition = layers[rightIndex].position;
+        layerPosition.x = layers[leftIndex].position.x - backgroundSize;
+        layers[rightIndex].position = layerPosition;
+
         leftIndex = rightIndex;
         rightIndex--;
         if (rightIndex < 0)
@@ -80,8 +73,10 @@ public class ScrollingBackground : MonoBehaviour
 
     private void ScrollRight()
     {
-        // int lastLeft = leftIndex;
-        layers[leftIndex].position = Vector2.right * (layers[rightIndex].position.x + backgroundSize);
+        var layerPosition = layers[leftIndex].position;
+        layerPosition.x = layers[rightIndex].position.x + backgroundSize;
+        layers[leftIndex].position = layerPosition;
+
         rightIndex = leftIndex;
         leftIndex++;
         if (leftIndex == layers.Length)
